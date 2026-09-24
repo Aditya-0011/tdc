@@ -91,3 +91,35 @@ class TestAddPersonForm:
         form.button[0].click().run()
         assert not at.exception
         assert any("must not be greater than" in e.value for e in at.sidebar.error)
+
+
+class TestSidebarFeedback:
+    def test_add_person_shows_success_status(self):
+        at = run_app()
+        form = at.sidebar.get("form")[0]
+        fill_valid_person(form)
+        form.button[0].click().run()
+        assert not at.exception
+        assert any("Added Test Person" in e.value for e in at.sidebar.success)
+
+    def test_status_clears_on_next_interaction(self):
+        at = run_app()
+        form = at.sidebar.get("form")[0]
+        fill_valid_person(form)
+        form.button[0].click().run()
+        assert at.sidebar.success  # status is showing
+        at.selectbox[0].select("Aarav (p001)").run()
+        assert not at.sidebar.success  # consumed by the next rerun
+
+    def test_reset_shows_success_and_restores_pool(self):
+        at = run_app()
+        form = at.sidebar.get("form")[0]
+        fill_valid_person(form)
+        form.button[0].click().run()
+        assert len(at.selectbox[0].options) == 16
+        at.sidebar.button[0].click().run()  # reset button
+        assert not at.exception
+        assert len(at.selectbox[0].options) == 15
+        assert any(
+            "Sample data loaded (15 people)" in e.value for e in at.sidebar.success
+        )

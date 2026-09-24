@@ -39,6 +39,23 @@ if "people" not in st.session_state:
     load_sample_pool()
 
 
+def show_status(kind: str, message: str) -> None:
+    """Queue a sidebar status message to show on the next rerun."""
+    st.session_state["status"] = (kind, message)
+
+
+def render_status() -> None:
+    """Show the queued status message, if any (consumes it)."""
+    status = st.session_state.pop("status", None)
+    if status is None:
+        return
+    kind, message = status
+    if kind == "error":
+        st.error(message, icon=":material/error:")
+    else:
+        st.success(message, icon=":material/check_circle:")
+
+
 def status_badge(status: MatchStatus) -> str:
     if status is MatchStatus.STRONG_MATCH:
         return ":green[STRONG MATCH]"
@@ -92,6 +109,7 @@ def render_result(result) -> None:
 def render_sidebar() -> None:
     """Data management: add person, upload JSON, download template, reset."""
     with st.sidebar:
+        render_status()
         st.header("Data")
         st.download_button(
             "Download JSON template",
@@ -119,13 +137,24 @@ def render_sidebar() -> None:
                         st.session_state.people = people
                         st.session_state.data_errors = []
                         st.session_state.last_upload = fingerprint
-                        st.toast(
-                            f"Loaded {len(people)} people.", icon=":material/check:"
+                        show_status(
+                            "success",
+                            f"Loaded {len(people)} people from {uploaded.name}.",
                         )
                         st.rerun()
 
         if st.button("Reset to sample data", icon=":material/restart_alt:"):
             load_sample_pool()
+            if st.session_state.data_errors:
+                show_status(
+                    "error",
+                    "Sample data could not be loaded — see the main panel for details.",
+                )
+            else:
+                show_status(
+                    "success",
+                    f"Sample data loaded ({len(st.session_state.people)} people).",
+                )
             st.rerun()
 
         st.download_button(
@@ -249,7 +278,7 @@ def render_add_person_form() -> None:
                     st.error(error)
             else:
                 st.session_state.people.append(person_from_dict(candidate_dict))
-                st.toast(f"Added {name}.", icon=":material/check:")
+                show_status("success", f"Added {name} ({person_id}).")
                 st.rerun()
 
 

@@ -418,6 +418,30 @@ Ready for submission. Acceptance criteria in `product.md` §34 are satisfied; no
 ### Next
 - Stop.
 
+## 2026-09-25 — Sidebar action feedback
+
+### Done
+- Added a sidebar status message mechanism: sidebar actions queue a message in session state and it renders (as `st.success`/`st.error` with icons) at the top of the sidebar on the rerun the action triggers, so the user sees confirmation that the action happened. The message is consumed on the next rerun (standard flash-message behavior).
+- Applied to: "Reset to sample data" (previously gave no feedback at all — success with people count, or error if sample data fails to load), "Add person" success (now "Added <name> (<id>)." persisting visibly), and JSON upload success (now "Loaded N people from <filename>.").
+- Upload validation/JSON errors and add-person form validation errors already rendered immediate `st.error` messages; unchanged.
+- Replaced the previous `st.toast` calls (which flash briefly during the rerun) with the persistent status messages.
+
+### Files changed
+- `app.py` — `show_status()`/`render_status()` helpers; reset/upload/add-person flows now queue feedback.
+- `tests/test_app.py` — 3 new tests (add-person shows status, status clears on next interaction, reset shows status and restores the pool).
+
+### Verification
+- `uv run pytest` — 72 passed.
+- `uvx ruff check` / `uvx ruff format` — clean; `uvx ty check app.py` — clean.
+- `uv run streamlit run app.py` — health `ok` (started and stopped after check).
+
+### Decisions / Notes
+- Feedback shows in the sidebar (where the actions live) rather than toasts: toasts were easy to miss because the action triggers an immediate rerun.
+- No new features beyond the confirmation messages; no matching/data changes.
+
+### Next
+- Stop.
+
 ---
 
 # 7. Milestone Checklist
@@ -530,6 +554,7 @@ Verified with valid and invalid examples in `tests/test_validators.py`.
 - [x] JSON template download — sidebar download_button;
 - [x] sample-data reset — button reloads the bundled file;
 - [x] empty/error states — empty pool, single-person pool, upload errors;
+- [x] sidebar action feedback — reset/add-person/upload show a persistent status message confirming the action (added 2026-09-25);
 - [x] bonus: download current pool as JSON.
 
 The UI remains intentionally simple (native widgets only).
@@ -615,7 +640,7 @@ The UI remains intentionally simple (native widgets only).
 ## Engineering
 
 - [x] `uv run streamlit run app.py` works.
-- [x] `uv run pytest` passes. (69 passed after the final review cycle)
+- [x] `uv run pytest` passes. (72 passed; 69 at review close + 3 sidebar-feedback tests)
 - [x] No unnecessary services.
 - [x] No hidden dependency on an external API.
 - [x] Error handling is reasonable. (errors surfaced as messages, no tracebacks in normal flows)
@@ -656,6 +681,7 @@ Do not spend remaining time adding unrelated features after the acceptance crite
 | 2026-09-24 | Added `people_to_json` "download current pool" UI affordance | Convenience; beyond minimum scope but small |
 | 2026-09-24 | Docker skipped | User decision at planning; README documents this |
 | 2026-09-25 | Docker added (single container, `Dockerfile` + `.dockerignore`) | User reversed the earlier skip decision; spec §29 optional-recommended |
+| 2026-09-25 | Sidebar action feedback (persistent status messages) | User request — reset/add/upload gave no visible confirmation |
 ```
 
 ---
@@ -679,7 +705,7 @@ Do not spend remaining time adding unrelated features after the acceptance crite
 
 ```text
 Implementation: complete and reviewed against product.md (engine, validation, data, UI)
-Tests: 69 passing (uv run pytest)
+Tests: 72 passing (uv run pytest)
 UI: complete (single app.py, native Streamlit widgets)
 Docker: included and verified (single container, Streamlit only)
 Documentation: README + product.md + summary.md updated
