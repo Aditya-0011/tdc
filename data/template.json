@@ -1,0 +1,24 @@
+{
+  "people": [
+    {
+      "id": "p001",
+      "name": "Replace with the person's name",
+      "attributes": {
+        "age": 29,
+        "location": { "city": "Mumbai", "state": "Maharashtra", "country": "India" },
+        "smoking": false,
+        "wants_children": "yes",
+        "relationship_goal": "marriage",
+        "lifestyle": "moderate"
+      },
+      "preferences": {
+        "age": { "min": 27, "max": 33, "strictness": "hard" },
+        "location": { "city": "Mumbai", "strictness": "soft" },
+        "smoking": { "value": false, "strictness": "hard" },
+        "wants_children": { "value": "yes", "strictness": "soft" },
+        "relationship_goal": { "value": "marriage", "strictness": "hard" },
+        "lifestyle": { "value": "moderate", "strictness": "soft" }
+      }
+    }
+  ]
+}

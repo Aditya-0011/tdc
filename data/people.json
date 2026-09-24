@@ -1,0 +1,304 @@
+{
+  "people": [
+    {
+      "id": "p001",
+      "name": "Aarav",
+      "attributes": {
+        "age": 29,
+        "location": { "city": "Mumbai", "state": "Maharashtra", "country": "India" },
+        "smoking": false,
+        "wants_children": "yes",
+        "relationship_goal": "marriage",
+        "lifestyle": "moderate"
+      },
+      "preferences": {
+        "age": { "min": 27, "max": 33, "strictness": "hard" },
+        "location": { "city": "Mumbai", "strictness": "soft" },
+        "smoking": { "value": false, "strictness": "hard" },
+        "wants_children": { "value": "yes", "strictness": "soft" },
+        "relationship_goal": { "value": "marriage", "strictness": "hard" },
+        "lifestyle": { "value": "moderate", "strictness": "soft" }
+      }
+    },
+    {
+      "id": "p002",
+      "name": "Isha",
+      "attributes": {
+        "age": 28,
+        "location": { "city": "Mumbai", "state": "Maharashtra", "country": "India" },
+        "smoking": false,
+        "wants_children": "yes",
+        "relationship_goal": "marriage",
+        "lifestyle": "social"
+      },
+      "preferences": {
+        "age": { "min": 26, "max": 33, "strictness": "hard" },
+        "location": { "city": "Mumbai", "strictness": "soft" },
+        "smoking": { "value": false, "strictness": "hard" },
+        "wants_children": { "value": "yes", "strictness": "soft" },
+        "relationship_goal": { "value": "marriage", "strictness": "hard" },
+        "lifestyle": { "value": "moderate", "strictness": "soft" }
+      }
+    },
+    {
+      "id": "p003",
+      "name": "Priya",
+      "attributes": {
+        "age": 31,
+        "location": { "city": "Mumbai", "state": "Maharashtra", "country": "India" },
+        "smoking": false,
+        "wants_children": "yes",
+        "relationship_goal": "marriage",
+        "lifestyle": "moderate"
+      },
+      "preferences": {
+        "age": { "min": 28, "max": 35, "strictness": "hard" },
+        "location": { "city": "Mumbai", "strictness": "hard" },
+        "smoking": { "value": false, "strictness": "hard" },
+        "wants_children": { "value": "yes", "strictness": "hard" },
+        "relationship_goal": { "value": "marriage", "strictness": "hard" },
+        "lifestyle": { "value": "moderate", "strictness": "soft" }
+      }
+    },
+    {
+      "id": "p004",
+      "name": "Rohan",
+      "attributes": {
+        "age": 32,
+        "location": { "city": "Pune", "state": "Maharashtra", "country": "India" },
+        "smoking": false,
+        "wants_children": "yes",
+        "relationship_goal": "marriage",
+        "lifestyle": "moderate"
+      },
+      "preferences": {
+        "age": { "min": 25, "max": 32, "strictness": "hard" },
+        "location": { "city": "Mumbai", "strictness": "hard" },
+        "smoking": { "value": false, "strictness": "soft" },
+        "wants_children": { "value": "yes", "strictness": "soft" },
+        "relationship_goal": { "value": "marriage", "strictness": "hard" },
+        "lifestyle": { "value": "moderate", "strictness": "soft" }
+      }
+    },
+    {
+      "id": "p005",
+      "name": "Vikram",
+      "attributes": {
+        "age": 35,
+        "location": { "city": "Delhi", "state": "Delhi", "country": "India" },
+        "smoking": true,
+        "wants_children": "no",
+        "relationship_goal": "long_term",
+        "lifestyle": "social"
+      },
+      "preferences": {
+        "age": { "min": 24, "max": 30, "strictness": "hard" },
+        "location": { "city": "Delhi", "strictness": "hard" },
+        "smoking": { "value": false, "strictness": "soft" },
+        "wants_children": { "value": "maybe_future", "strictness": "soft" },
+        "relationship_goal": { "value": "marriage", "strictness": "hard" },
+        "lifestyle": { "value": "social", "strictness": "soft" }
+      }
+    },
+    {
+      "id": "p006",
+      "name": "Neha",
+      "attributes": {
+        "age": 27,
+        "location": { "city": "Bengaluru", "state": "Karnataka", "country": "India" },
+        "smoking": false,
+        "wants_children": "yes",
+        "relationship_goal": "marriage",
+        "lifestyle": "moderate"
+      },
+      "preferences": {
+        "age": { "min": 27, "max": 33, "strictness": "hard" },
+        "location": { "city": "Bengaluru", "strictness": "soft" },
+        "smoking": { "value": false, "strictness": "hard" },
+        "wants_children": { "value": "yes", "strictness": "soft" },
+        "relationship_goal": { "value": "marriage", "strictness": "hard" },
+        "lifestyle": { "value": "moderate", "strictness": "soft" }
+      }
+    },
+    {
+      "id": "p007",
+      "name": "Ananya",
+      "attributes": {
+        "age": 26,
+        "location": { "city": "Mumbai", "state": "Maharashtra", "country": "India" },
+        "smoking": false,
+        "wants_children": "maybe_future",
+        "relationship_goal": "marriage",
+        "lifestyle": "quiet"
+      },
+      "preferences": {
+        "age": { "min": 27, "max": 33, "strictness": "hard" },
+        "location": { "city": "Mumbai", "strictness": "hard" },
+        "smoking": { "value": false, "strictness": "hard" },
+        "wants_children": { "value": "no", "strictness": "hard" },
+        "relationship_goal": { "value": "marriage", "strictness": "hard" },
+        "lifestyle": { "value": "quiet", "strictness": "hard" }
+      }
+    },
+    {
+      "id": "p008",
+      "name": "Kabir",
+      "attributes": {
+        "age": 33,
+        "location": { "city": "Mumbai", "state": "Maharashtra", "country": "India" },
+        "smoking": true,
+        "wants_children": "no",
+        "relationship_goal": "marriage",
+        "lifestyle": "social"
+      },
+      "preferences": {
+        "age": { "min": 24, "max": 30, "strictness": "hard" },
+        "location": { "city": "Mumbai", "strictness": "soft" },
+        "smoking": { "value": false, "strictness": "hard" },
+        "wants_children": { "value": "no", "strictness": "soft" },
+        "relationship_goal": { "value": "marriage", "strictness": "hard" },
+        "lifestyle": { "value": "social", "strictness": "soft" }
+      }
+    },
+    {
+      "id": "p009",
+      "name": "Meera",
+      "attributes": {
+        "age": 30,
+        "location": { "city": "Mumbai", "state": "Maharashtra", "country": "India" },
+        "smoking": false,
+        "wants_children": "maybe_future",
+        "relationship_goal": "long_term",
+        "lifestyle": "moderate"
+      },
+      "preferences": {
+        "age": { "min": 28, "max": 36, "strictness": "hard" },
+        "location": { "city": "Mumbai", "strictness": "soft" },
+        "smoking": { "value": false, "strictness": "hard" },
+        "wants_children": { "value": "maybe_future", "strictness": "soft" },
+        "relationship_goal": { "value": "long_term", "strictness": "soft" },
+        "lifestyle": { "value": "moderate", "strictness": "soft" }
+      }
+    },
+    {
+      "id": "p010",
+      "name": "Tara",
+      "attributes": {
+        "age": 24,
+        "location": { "city": "Mumbai", "state": "Maharashtra", "country": "India" },
+        "smoking": false,
+        "wants_children": "no",
+        "relationship_goal": "open",
+        "lifestyle": "social"
+      },
+      "preferences": {
+        "age": { "min": 24, "max": 30, "strictness": "hard" },
+        "location": { "city": "Mumbai", "strictness": "soft" },
+        "smoking": { "value": false, "strictness": "soft" },
+        "wants_children": { "value": "no", "strictness": "soft" },
+        "relationship_goal": { "value": "open", "strictness": "hard" },
+        "lifestyle": { "value": "social", "strictness": "soft" }
+      }
+    },
+    {
+      "id": "p011",
+      "name": "Dev",
+      "attributes": {
+        "age": 30,
+        "location": { "city": "Hyderabad", "state": "Telangana", "country": "India" },
+        "smoking": false,
+        "wants_children": "yes",
+        "relationship_goal": "marriage",
+        "lifestyle": "moderate"
+      },
+      "preferences": {
+        "age": { "min": 25, "max": 32, "strictness": "hard" },
+        "location": { "city": "Hyderabad", "strictness": "hard" },
+        "smoking": { "value": false, "strictness": "hard" },
+        "wants_children": { "value": "yes", "strictness": "hard" },
+        "relationship_goal": { "value": "marriage", "strictness": "hard" },
+        "lifestyle": { "value": "moderate", "strictness": "hard" }
+      }
+    },
+    {
+      "id": "p012",
+      "name": "Zoya",
+      "attributes": {
+        "age": 29,
+        "location": { "city": "Pune", "state": "Maharashtra", "country": "India" },
+        "smoking": false,
+        "wants_children": "no",
+        "relationship_goal": "long_term",
+        "lifestyle": "social"
+      },
+      "preferences": {
+        "age": { "min": 27, "max": 35, "strictness": "hard" },
+        "location": { "city": "Pune", "strictness": "soft" },
+        "smoking": { "value": false, "strictness": "hard" },
+        "wants_children": { "value": "no", "strictness": "hard" },
+        "relationship_goal": { "value": "long_term", "strictness": "hard" },
+        "lifestyle": { "value": "moderate", "strictness": "soft" }
+      }
+    },
+    {
+      "id": "p013",
+      "name": "Arjun",
+      "attributes": {
+        "age": 29,
+        "location": { "city": "Delhi", "state": "Delhi", "country": "India" },
+        "smoking": false,
+        "wants_children": "yes",
+        "relationship_goal": "marriage",
+        "lifestyle": "moderate"
+      },
+      "preferences": {
+        "age": { "min": 26, "max": 32, "strictness": "hard" },
+        "location": { "city": "Delhi", "strictness": "hard" },
+        "smoking": { "value": false, "strictness": "hard" },
+        "wants_children": { "value": "yes", "strictness": "soft" },
+        "relationship_goal": { "value": "marriage", "strictness": "hard" },
+        "lifestyle": { "value": "moderate", "strictness": "soft" }
+      }
+    },
+    {
+      "id": "p014",
+      "name": "Naina",
+      "attributes": {
+        "age": 28,
+        "location": { "city": "Mumbai", "state": "Maharashtra", "country": "India" },
+        "smoking": false,
+        "wants_children": "no",
+        "relationship_goal": "marriage",
+        "lifestyle": "quiet"
+      },
+      "preferences": {
+        "age": { "min": 26, "max": 34, "strictness": "hard" },
+        "location": { "city": "Mumbai", "strictness": "soft" },
+        "smoking": { "value": false, "strictness": "soft" },
+        "wants_children": { "value": "maybe_future", "strictness": "soft" },
+        "relationship_goal": { "value": "marriage", "strictness": "hard" },
+        "lifestyle": { "value": "quiet", "strictness": "soft" }
+      }
+    },
+    {
+      "id": "p015",
+      "name": "Aditi",
+      "attributes": {
+        "age": 32,
+        "location": { "city": "Chennai", "state": "Tamil Nadu", "country": "India" },
+        "smoking": false,
+        "wants_children": "maybe_future",
+        "relationship_goal": "marriage",
+        "lifestyle": "moderate"
+      },
+      "preferences": {
+        "age": { "min": 28, "max": 38, "strictness": "hard" },
+        "location": { "city": "Chennai", "strictness": "soft" },
+        "smoking": { "value": false, "strictness": "hard" },
+        "wants_children": { "value": "yes", "strictness": "soft" },
+        "relationship_goal": { "value": "marriage", "strictness": "hard" },
+        "lifestyle": { "value": "moderate", "strictness": "soft" }
+      }
+    }
+  ]
+}

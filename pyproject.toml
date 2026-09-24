@@ -1,0 +1,21 @@
+[project]
+name = "tdc-matcher"
+version = "0.1.0"
+description = "TDC Matcher — decision-support prototype for TDC matchmakers"
+readme = "README.md"
+authors = [
+    { name = "Aditya Punmiya", email = "adityapunmiya@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "streamlit>=1.64.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.18,<0.13.0"]
+build-backend = "uv_build"
